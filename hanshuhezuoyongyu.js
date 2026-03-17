@@ -7,7 +7,7 @@ sayHello();
 
 // 带参数的函数
 function introduce(name, age) {
-    console.log(`我叫${钟奕宁}，今年龄${20}`); //模板字符串，用于动态展示数据
+    console.log(`我叫${name}，今年龄${age}`); //模板字符串，用于动态展示数据
 }
 introduce("小王", 18);
 introduce("小王=adad", 10008);
