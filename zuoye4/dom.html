@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #000;
+        }
+        button {
+            display: block;
+            margin-bottom: 8px;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">这是原标题</h1>
+    <div class="box" data-name="yyy">这是一个div</div>
+    <ul id="list">
+        <li>apple</li>
+        <li>banana</li>
+        <li>orange</li>
+    </ul>
+
+    <button id="txtfont">修改内容</button>
+    <button id="txtstyle">修改样式</button>
+    <button id="txtattr">查看属性</button>
+    <button id="txtadd">添加元素</button>
+    <button id="txtdel">删除元素</button>
+
+    <script>
+        // 1. 获取元素
+        const title = document.getElementById('title');
+        const box = document.getElementById('box');
+        const list = document.getElementById('list');
+
+        // 2. 修改内容
+        document.getElementById('txtfont').onclick = function () {
+            title.innerText = '这是修改后的标题';
+        }
+
+        // 3. 修改样式
+        document.getElementById('txtstyle').onclick = function () {
+            box.style.backgroundColor = 'red';
+            box.style.color = 'white';
+            box.style.fontSize = '20px';
+        }
+
+        // 4. 获取元素属性
+        document.getElementById('txtattr').onclick = function () {
+            alert(box.getAttribute('data-name'));
+        }
+
+        // 5. 创建并添加元素
+        document.getElementById('txtadd').onclick = function () {
+            const li = document.createElement('li');
+            li.innerText = 'pear';
+            list.appendChild(li);
+        }
+
+        // 6. 删除元素
+        document.getElementById('txtdel').onclick = function () {
+            if (list.children.length > 0) {
+                list.removeChild(list.lastElementChild);
+            }
+        }
+    </script>
+</body>
+</html>
